@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToPaz Studio v4.0 - Executive AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            glow: 'rgba(234, 179, 8, 0.5)'
+                        },
+                        dark: {
+                            bg: '#020205',      // Almost black
+                            surface: '#0A0A0F', // Very dark blue-ish grey
+                            border: '#1F1F29',
+                            hover: '#15151E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        tech: ['Rajdhani', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px -5px rgba(234, 179, 8, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020205;
+            color: #d1d5db;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(234, 179, 8, 0.08), transparent 40%),
+                linear-gradient(to bottom, #020205, #050508);
+        }
+
+        /* Scrollbar Premium */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EAB308;
+        }
+
+        /* Utility Classes */
+        .tech-border {
+            border: 1px solid #1F1F29;
+        }
+        
+        .active-gold-border {
+            border-color: #EAB308;
+            box-shadow: 0 0 15px -3px rgba(234, 179, 8, 0.2);
+        }
+
+        .cyber-input {
+            background: #0A0A0F;
+            border: 1px solid #1F1F29;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .cyber-input:focus {
+            outline: none;
+            border-color: #EAB308;
+            box-shadow: 0 0 0 1px #EAB308;
+        }
+
+        .btn-gold {
+            background: #EAB308;
+            color: black;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+        }
+        .btn-gold:hover {
+            background: #FACC15;
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+        }
+        .btn-gold:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .panel-header {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        /* --- VIDEO AI MOTION SIMULATIONS --- */
+        
+        /* 1. Cinematic Masterpiece (Zoom In Slow) */
+        .motion-cinematic {
+            animation: cinematicZoom 8s ease-in-out infinite alternate;
+            transform-origin: center center;
+        }
+        @keyframes cinematicZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        /* 2. Levitation (Float Up Down) */
+        .motion-levitate {
+            animation: levitateMove 4s ease-in-out infinite;
+        }
+        @keyframes levitateMove {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* 3. Lifestyle Authentic (Handheld Shake) */
+        .motion-lifestyle {
+            animation: handheldShake 6s ease-in-out infinite;
+        }
+        @keyframes handheldShake {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(1deg) scale(1.02); }
+            50% { transform: rotate(-1deg) scale(1.05); }
+            75% { transform: rotate(0.5deg) scale(1.02); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        /* 4. Epic VFX (Pulse & Brightness) */
+        .motion-vfx {
+            animation: vfxPulse 3s infinite;
+        }
+        @keyframes vfxPulse {
+            0% { filter: contrast(100%) brightness(100%); transform: scale(1); }
+            50% { filter: contrast(115%) brightness(110%); transform: scale(1.03); }
+            100% { filter: contrast(100%) brightness(100%); transform: scale(1); }
+        }
+
+        /* 5. 360 Loop (Horizontal Pan Simulation) */
+        .motion-360 {
+            animation: panLoop 10s linear infinite alternate;
+        }
+        @keyframes panLoop {
+            0% { transform: scale(1.2) translateX(-15px); }
+            100% { transform: scale(1.2) translateX(15px); }
+        }
+
+        /* 6. Y2K Pop (Hue Shift & Quick Jump) */
+        .motion-y2k {
+            animation: y2kVibe 0.8s steps(2) infinite alternate;
+        }
+        @keyframes y2kVibe {
+            0% { filter: hue-rotate(0deg) saturate(100%); transform: scale(1); }
+            100% { filter: hue-rotate(10deg) saturate(120%); transform: scale(1.01); }
+        }
+
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
