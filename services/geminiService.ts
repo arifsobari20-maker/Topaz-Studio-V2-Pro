@@ -193,7 +193,7 @@ export const generateImage = async (prompt: string, images?: { base64: string, m
     }
 
     // Try models in order: 2.5 Image -> 2.0 Flash (Multimodal)
-    const modelsToTry = ['gemini-1.5-flash-latest', 'gemini-1.5-flash-latest'];
+    const modelsToTry = ['gemini-2.5-flash-image', 'gemini-2.0-flash-exp'];
     
     for (const modelName of modelsToTry) {
         try {
@@ -250,7 +250,7 @@ export const generateText = async (prompt: string, images?: { base64: string, mi
     // 1. Gemini 3 (Bleeding Edge) - If Key supports it
     // 2. Gemini 2.0 Flash (Experimental) - Very capable
     // 3. Gemini 1.5 Flash (Stable) - The workhorse
-    const textModels = ['gemini-1.5-flash-latest', 'gemini-1.5-flash-latest', 'gemini-1.5-flash-latest'];
+    const textModels = ['gemini-3-flash-preview', 'gemini-2.0-flash-exp', 'gemini-1.5-flash'];
 
     for (const model of textModels) {
         try {
@@ -467,7 +467,7 @@ export const generateMetadataForStock = async (base64: string, mimeType: string,
     `;
     
     // Fallback logic for JSON mode as well
-    const models = ['gemini-3-flash-preview', 'gemini-1.5-flash-latest', 'gemini-1.5-flash-latest'];
+    const models = ['gemini-3-flash-preview', 'gemini-2.0-flash-exp', 'gemini-1.5-flash'];
     let lastError;
 
     for (const m of models) {
